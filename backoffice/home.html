@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="refresh" content="0; url=login.html">
+  <title>Panel - Backoffice</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/home.css">
+</head>
+
+<body>
+  <header class="topbar">
+    <p class="brand">&lt;<strong>dev</strong>folio/&gt; backoffice</p>
+
+    <nav aria-label="Principal">
+      <ul class="topbar__nav">
+        <li><a href="home.html" aria-current="page">Panel</a></li>
+        <li><a href="login.html">Cerrar sesión</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="dashboard">
+    <h1>Panel de control</h1>
+    <p class="dashboard__intro">Resumen de tu portafolio.</p>
+
+    <section aria-labelledby="resumen-titulo">
+      <h2 id="resumen-titulo" class="visually-hidden">Resumen</h2>
+      <ul class="stats">
+        <li class="stat">
+          <span class="stat__value">0</span>
+          <span class="stat__label">Proyectos publicados</span>
+        </li>
+        <li class="stat">
+          <span class="stat__value">0</span>
+          <span class="stat__label">Habilidades registradas</span>
+        </li>
+        <li class="stat">
+          <span class="stat__value">0</span>
+          <span class="stat__label">Experiencias laborales</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="issues" aria-labelledby="pendientes-titulo">
+      <h2 id="pendientes-titulo">Pendientes</h2>
+      <ul class="issues__list">
+        <li><span class="tag tag--open">abierto</span> Agregar tu primer proyecto</li>
+        <li><span class="tag tag--open">abierto</span> Registrar tus habilidades técnicas</li>
+        <li><span class="tag tag--open">abierto</span> Completar tu perfil</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Backoffice - Ingeniería en Software</p>
+  </footer>
+</body>
+
+</html>

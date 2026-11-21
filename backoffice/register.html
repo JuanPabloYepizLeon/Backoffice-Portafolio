@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crear cuenta - Backoffice</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/auth.css">
+</head>
+
+<body>
+  <div class="auth">
+
+    <aside class="auth__panel">
+      <p class="brand">&lt;<strong>dev</strong>folio/&gt; backoffice</p>
+
+      <pre class="code" aria-hidden="true"><code><span class="c-com">$</span> git init mi-portafolio
+<span class="c-com">$</span> git add .
+<span class="c-com">$</span> git commit -m <span class="c-str">"Nuevo ingeniero"</span>
+
+<span class="c-com">// Tu primer commit empieza aquí</span></code></pre>
+
+      <p class="auth__tagline">Todo gran proyecto empieza con un primer commit.</p>
+    </aside>
+
+    <main class="auth__content">
+      <section class="card">
+        <h1>Crea tu cuenta</h1>
+        <p class="card__intro">Regístrate para empezar a armar tu portafolio.</p>
+
+        <form action="#" method="post">
+          <div class="field">
+            <label for="name">Nombre completo</label>
+            <input type="text" id="name" name="name" placeholder="Juan Pablo Yepiz León" autocomplete="name" required>
+          </div>
+
+          <div class="field">
+            <label for="email">Correo electrónico</label>
+            <input type="email" id="email" name="email" placeholder="tu@correo.com" autocomplete="email" required>
+          </div>
+
+          <div class="field">
+            <label for="password">Contraseña</label>
+            <input type="password" id="password" name="password" placeholder="Mínimo 8 caracteres" minlength="8" autocomplete="new-password" required>
+          </div>
+
+          <div class="field">
+            <label for="confirm">Confirmar contraseña</label>
+            <input type="password" id="confirm" name="confirm" placeholder="Repite tu contraseña" minlength="8" autocomplete="new-password" required>
+          </div>
+
+          <button type="submit" class="btn">Crear cuenta</button>
+        </form>
+
+        <p class="card__footer">¿Ya tienes cuenta? <a href="login.html">Inicia sesión</a></p>
+      </section>
+    </main>
+
+  </div>
+</body>
+
+</html>

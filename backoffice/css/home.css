@@ -1,0 +1,123 @@
+.topbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  color: var(--white);
+  background-color: var(--ink);
+}
+
+.topbar__nav {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.topbar__nav a {
+  color: #d6e2f5;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.topbar__nav a:hover,
+.topbar__nav a[aria-current="page"] {
+  color: var(--amber);
+}
+
+.dashboard {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 2rem 1.25rem;
+}
+
+.dashboard h1 {
+  font-size: 1.75rem;
+  line-height: 1.2;
+}
+
+.dashboard__intro {
+  margin: 0.3rem 0 1.75rem;
+  color: var(--muted);
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  padding: 1.25rem;
+  background-color: var(--white);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--blue);
+  border-radius: var(--radius);
+}
+
+.stat__value {
+  font-family: var(--font-code);
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.stat__label {
+  color: var(--muted);
+}
+
+.issues {
+  margin-top: 2.5rem;
+}
+
+.issues h2 {
+  margin-bottom: 0.75rem;
+  font-size: 1.25rem;
+}
+
+.issues__list {
+  background-color: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.issues__list li {
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.issues__list li:last-child {
+  border-bottom: none;
+}
+
+.tag {
+  display: inline-block;
+  margin-right: 0.5rem;
+  padding: 0.1rem 0.6rem;
+  font-family: var(--font-code);
+  font-size: 0.8rem;
+  border-radius: 999px;
+}
+
+.tag--open {
+  color: #6b4a00;
+  background-color: #fbe8b8;
+}
+
+.footer {
+  padding: 1.5rem 1.25rem;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+@media (min-width: 700px) {
+  .stats {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .topbar {
+    padding: 1rem 2.5rem;
+  }
+}

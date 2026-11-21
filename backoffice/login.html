@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iniciar sesión - Backoffice</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/auth.css">
+</head>
+
+<body>
+  <div class="auth">
+    <aside class="auth__panel">
+      <p class="brand">&lt;<strong>dev</strong>folio/&gt; backoffice</p>
+
+      <pre class="code" aria-hidden="true"><code><span class="c-kw">const</span> ingeniero = {
+    rol: <span class="c-str">"Software Engineer"</span>,
+    stack: [<span class="c-str">"HTML"</span>, <span class="c-str">"CSS"</span>, <span class="c-str">"JS"</span>],
+    sesion: <span class="c-kw">false</span>,
+};
+
+<span class="c-com">// Inicia sesión para continuar</span></code></pre>
+
+      <p class="auth__tagline">Administra tu portafolio como administras tu código.</p>
+    </aside>
+
+    <main class="auth__content">
+      <section class="card">
+        <h1>Inicia sesión</h1>
+        <p class="card__intro">Entra para gestionar tus proyectos y habilidades.</p>
+
+        <form action="#" method="post">
+          <div class="field">
+            <label for="email">Correo electrónico</label>
+            <input type="email" id="email" name="email" placeholder="tu@correo.com" autocomplete="email" required>
+          </div>
+
+          <div class="field">
+            <label for="password">Contraseña</label>
+            <input type="password" id="password" name="password" placeholder="Tu contraseña" autocomplete="current-password" required>
+          </div>
+
+          <button type="submit" class="btn">Iniciar sesión</button>
+        </form>
+
+        <p class="card__footer">¿Aún no tienes cuenta? <a href="register.html">Regístrate</a></p>
+      </section>
+    </main>
+
+  </div>
+</body>
+
+</html>
