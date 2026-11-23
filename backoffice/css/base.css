@@ -111,3 +111,15 @@ a:hover {
   clip: rect(0 0 0 0);
   white-space: nowrap;
 }
+
+.form-message {
+  min-height: 1.5rem;
+  margin-bottom: 0.75rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #b3261e;
+}
+
+.form-message--ok {
+  color: #1b6e3a;
+}

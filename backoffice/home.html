@@ -4,10 +4,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="refresh" content="0; url=login.html">
   <title>Panel - Backoffice</title>
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/home.css">
+  <script>
+    if (!localStorage.getItem("authToken")) {
+      window.location.replace("login.html");
+    }
+  </script>
 </head>
 
 <body>
@@ -17,14 +21,14 @@
     <nav aria-label="Principal">
       <ul class="topbar__nav">
         <li><a href="home.html" aria-current="page">Panel</a></li>
-        <li><a href="login.html">Cerrar sesión</a></li>
+        <li><a href="login.html" id="logout">Cerrar sesión</a></li>
       </ul>
     </nav>
   </header>
 
   <main class="dashboard">
     <h1>Panel de control</h1>
-    <p class="dashboard__intro">Resumen de tu portafolio.</p>
+    <p class="dashboard__intro">Administra tus proyectos.</p>
 
     <section aria-labelledby="resumen-titulo">
       <h2 id="resumen-titulo" class="visually-hidden">Resumen</h2>
@@ -44,12 +48,52 @@
       </ul>
     </section>
 
-    <section class="issues" aria-labelledby="pendientes-titulo">
-      <h2 id="pendientes-titulo">Pendientes</h2>
-      <ul class="issues__list">
-        <li><span class="tag tag--open">abierto</span> Agregar tu primer proyecto</li>
-        <li><span class="tag tag--open">abierto</span> Registrar tus habilidades técnicas</li>
-        <li><span class="tag tag--open">abierto</span> Completar tu perfil</li>
+    <section class="projects" aria-labelledby="proyectos-titulo">
+      <div class="projects__header">
+        <h2 id="proyectos-titulo">Mis proyectos</h2>
+        <button type="button" class="btn btn--small" id="btn-nuevo">Agregar proyecto</button>
+      </div>
+
+      <form id="project-form" class="project-form" hidden>
+        <h3 id="form-titulo">Nuevo proyecto</h3>
+
+        <div class="field">
+          <label for="title">Título</label>
+          <input type="text" id="title" required>
+        </div>
+
+        <div class="field">
+          <label for="description">Descripción</label>
+          <textarea id="description" rows="3" required></textarea>
+        </div>
+
+        <div class="field">
+          <label for="technologies">Tecnologías</label>
+          <input type="text" id="technologies" placeholder="HTML, CSS, JavaScript">
+        </div>
+
+        <div class="field">
+          <label for="repository">Repositorio</label>
+          <input type="url" id="repository" placeholder="https://github.com/usuario/...">
+        </div>
+
+        <div class="project-form__buttons">
+          <button type="submit" class="btn btn--small" id="btn-guardar">Guardar</button>
+          <button type="button" class="btn btn--small btn--gray" id="btn-cancelar">Cancelar</button>
+        </div>
+      </form>
+
+      <ul class="projects__list">
+        <li class="project">
+          <h3>Título del proyecto</h3>
+          <p>Descripción breve del proyecto.</p>
+          <p class="project__tech">HTML, CSS, JavaScript</p>
+          <a href="#">Ver repositorio</a>
+          <div class="project__buttons">
+            <button type="button" class="btn btn--small">Actualizar</button>
+            <button type="button" class="btn btn--small btn--danger">Eliminar</button>
+          </div>
+        </li>
       </ul>
     </section>
   </main>
@@ -57,6 +101,7 @@
   <footer class="footer">
     <p>Backoffice - Ingeniería en Software</p>
   </footer>
+  <script src="js/home.js"></script>
 </body>
 
 </html>

@@ -29,15 +29,20 @@
         <h1>Crea tu cuenta</h1>
         <p class="card__intro">Regístrate para empezar a armar tu portafolio.</p>
 
-        <form action="#" method="post">
+        <form id="register-form">
           <div class="field">
             <label for="name">Nombre completo</label>
-            <input type="text" id="name" name="name" placeholder="Juan Pablo Yepiz León" autocomplete="name" required>
+            <input type="text" id="name" name="name" placeholder="Juan Pablo Yepiz León" minlength="6" autocomplete="name" required>
           </div>
 
           <div class="field">
             <label for="email">Correo electrónico</label>
             <input type="email" id="email" name="email" placeholder="tu@correo.com" autocomplete="email" required>
+          </div>
+
+          <div class="field">
+            <label for="itsonId">ID ITSON</label>
+            <input type="text" id="itsonId" name="itsonId" placeholder="6 dígitos, ej. 268712" pattern="[0-9]{6}" maxlength="6" inputmode="numeric" required>
           </div>
 
           <div class="field">
@@ -50,6 +55,8 @@
             <input type="password" id="confirm" name="confirm" placeholder="Repite tu contraseña" minlength="8" autocomplete="new-password" required>
           </div>
 
+          <p id="mensaje" class="form-message" role="alert"></p>
+
           <button type="submit" class="btn">Crear cuenta</button>
         </form>
 
@@ -58,6 +65,7 @@
     </main>
 
   </div>
+  <script src="js/register.js"></script>
 </body>
 
 </html>

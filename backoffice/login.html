@@ -30,7 +30,7 @@
         <h1>Inicia sesión</h1>
         <p class="card__intro">Entra para gestionar tus proyectos y habilidades.</p>
 
-        <form action="#" method="post">
+        <form id="login-form">
           <div class="field">
             <label for="email">Correo electrónico</label>
             <input type="email" id="email" name="email" placeholder="tu@correo.com" autocomplete="email" required>
@@ -41,6 +41,8 @@
             <input type="password" id="password" name="password" placeholder="Tu contraseña" autocomplete="current-password" required>
           </div>
 
+          <p id="mensaje" class="form-message" role="alert"></p>
+
           <button type="submit" class="btn">Iniciar sesión</button>
         </form>
 
@@ -49,6 +51,7 @@
     </main>
 
   </div>
+  <script src="js/login.js"></script>
 </body>
 
 </html>
