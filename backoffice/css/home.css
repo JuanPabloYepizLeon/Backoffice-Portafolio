@@ -185,3 +185,34 @@
     padding: 1rem 2.5rem;
   }
 }
+
+.modal {
+  width: min(26rem, calc(100% - 2rem));
+  margin: auto;
+  padding: 1.5rem;
+  color: var(--ink);
+  background-color: var(--white);
+  border: 1px solid var(--line);
+  border-top: 4px solid #b3261e;
+  border-radius: var(--radius);
+}
+
+.modal::backdrop {
+  background-color: #00000080;
+}
+
+.modal h2 {
+  margin-bottom: 0.75rem;
+  font-size: 1.2rem;
+}
+
+.modal p {
+  margin-bottom: 1.25rem;
+  color: var(--muted);
+}
+
+.modal__buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+}

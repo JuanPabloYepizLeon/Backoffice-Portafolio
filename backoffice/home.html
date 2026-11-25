@@ -34,7 +34,7 @@
       <h2 id="resumen-titulo" class="visually-hidden">Resumen</h2>
       <ul class="stats">
         <li class="stat">
-          <span class="stat__value">0</span>
+          <span class="stat__value" id="total-proyectos">0</span>
           <span class="stat__label">Proyectos publicados</span>
         </li>
         <li class="stat">
@@ -77,26 +77,29 @@
           <input type="url" id="repository" placeholder="https://github.com/usuario/...">
         </div>
 
+        <div class="field">
+          <label for="images">Imágenes</label>
+          <input type="text" id="images" placeholder="https://dominio.com/imagen1.png, https://dominio.com/imagen2.png">
+        </div>
+
         <div class="project-form__buttons">
           <button type="submit" class="btn btn--small" id="btn-guardar">Guardar</button>
           <button type="button" class="btn btn--small btn--gray" id="btn-cancelar">Cancelar</button>
         </div>
       </form>
 
-      <ul class="projects__list">
-        <li class="project">
-          <h3>Título del proyecto</h3>
-          <p>Descripción breve del proyecto.</p>
-          <p class="project__tech">HTML, CSS, JavaScript</p>
-          <a href="#">Ver repositorio</a>
-          <div class="project__buttons">
-            <button type="button" class="btn btn--small">Actualizar</button>
-            <button type="button" class="btn btn--small btn--danger">Eliminar</button>
-          </div>
-        </li>
-      </ul>
+      <ul class="projects__list"></ul>
     </section>
   </main>
+
+  <dialog id="modal-eliminar" class="modal" aria-labelledby="modal-titulo">
+    <h2 id="modal-titulo">Eliminar proyecto</h2>
+    <p>¿Seguro que quieres eliminar <strong id="modal-proyecto"></strong>? Esta acción no se puede deshacer.</p>
+    <div class="modal__buttons">
+      <button type="button" class="btn btn--small btn--gray" id="btn-cancelar-eliminar">Cancelar</button>
+      <button type="button" class="btn btn--small btn--danger" id="btn-confirmar-eliminar">Eliminar</button>
+    </div>
+  </dialog>
 
   <footer class="footer">
     <p>Backoffice - Ingeniería en Software</p>

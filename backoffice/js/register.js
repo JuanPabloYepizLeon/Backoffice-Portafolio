@@ -3,7 +3,7 @@ const API_BASE = "https://portfolio-api-three-black.vercel.app/api/v1";
 const form = document.getElementById("register-form");
 const mensaje = document.getElementById("mensaje");
 
-form.addEventListener("submit", async function (event) {
+form.addEventListener("submit", async (event) => {
     event.preventDefault();
     mensaje.textContent = "";
     mensaje.classList.remove("form-message--ok");
