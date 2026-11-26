@@ -10,6 +10,8 @@ const form = document.getElementById("project-form");
 const formTitulo = document.getElementById("form-titulo");
 const lista = document.querySelector(".projects__list");
 const totalProyectos = document.getElementById("total-proyectos");
+const totalTecnologias = document.getElementById("total-tecnologias");
+const listaTecnologias = document.getElementById("lista-tecnologias");
 const modalEliminar = document.getElementById("modal-eliminar");
 
 let proyectoEditando = null;
@@ -123,11 +125,35 @@ function crearTarjeta(proyecto) {
     return li;
 }
 
+function mostrarTecnologias(proyectos) {
+    const tecnologias = new Map();
+    proyectos.forEach((proyecto) => {
+        (proyecto.technologies || []).forEach((tech) => {
+            const nombre = tech.trim();
+            const clave = nombre.toLowerCase();
+            if (nombre && !tecnologias.has(clave)) {
+                tecnologias.set(clave, nombre);
+            }
+        });
+    });
+
+    const nombres = [...tecnologias.values()].sort((a, b) => a.localeCompare(b, "es"));
+    totalTecnologias.textContent = nombres.length;
+    listaTecnologias.innerHTML = "";
+    nombres.forEach((nombre) => {
+        const li = document.createElement("li");
+        li.className = "stat__tag";
+        li.textContent = nombre;
+        listaTecnologias.appendChild(li);
+    });
+}
+
 async function cargarProyectos() {
     try {
         const proyectos = await getProjectsByUser();
         lista.innerHTML = "";
         totalProyectos.textContent = proyectos.length;
+        mostrarTecnologias(proyectos);
         proyectos.forEach((proyecto) => {
             lista.appendChild(crearTarjeta(proyecto));
         });
